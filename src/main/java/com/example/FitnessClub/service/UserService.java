@@ -21,8 +21,6 @@ public class UserService implements UserDetailsService {
     @Autowired
     private UserRepo userRepo;
 
-    @Autowired
-    private MailSender mailSender;
 
     @Autowired
     private DescriptionRepo descRepo;
@@ -41,7 +39,6 @@ public class UserService implements UserDetailsService {
 
         user.setActive(true);
         user.setRoles(Collections.singleton(Role.USER));
-        user.setActivationCode(UUID.randomUUID().toString());
 
         userRepo.save(user);
         return true;
