@@ -20,8 +20,6 @@ public class MainController {
     @Autowired
     private CustomerRepo customerRepo;
 
-    @Value("${upload.path}")
-    private String uploadPath;
 
     @GetMapping("/")
     public String greeting(Map<String, Object> model) {
@@ -39,16 +37,4 @@ public class MainController {
     }
 
 
-    /*@PostMapping("/main")
-    public String add( @AuthenticationPrincipal User user){
-        Customer customer = customerRepo.findByUser(user);
-        Trainer trainer = trainerRepo.
-        trainerRepo.save(customer);
-
-        Iterable<Message> messages = messageRepo.findAll();
-
-        model.put("messages", messages);
-
-        return "main";
-    }*/
 }
