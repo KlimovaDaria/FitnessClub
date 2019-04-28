@@ -106,6 +106,8 @@ public class User implements UserDetails {
         return active;
     }
 
+
+
     public boolean isAdmin(){
         return roles.contains(com.example.FitnessClub.domain.Role.ADMIN);
     }

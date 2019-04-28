@@ -1,19 +1,30 @@
 package com.example.FitnessClub.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
-public class Subscription {
+public class Description {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String phone;
     private Date dataStart;
     private Date dataEnd;
+
+
+    private String roles;
+
+    public String getRoles() {
+        return roles;
+    }
+
+    public void setRoles(String roles) {
+        this.roles = roles;
+    }
 
     public Long getId() {
         return id;

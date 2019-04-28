@@ -15,14 +15,21 @@
             <li class="nav-item active">
                 <a class="nav-link" href="/main">Training list </a>
             </li>
-            <#if isAdmin>
-            <li class="nav-item active">
-                <a class="nav-link" href="/user">User List </a>
-            </li>
-            </#if>
-            </ul>
-        </div>
+        </ul>
+    </div>
 
-    <div class="navbsr-text mr-3"><a href = "/profile">${name}</a></div>
+    <div class="dropdown open">
+        <a class="navbsr-text mr-3 dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        ${name}
+        </a>
+
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+           <a class="dropdown-item" href = "/profile"}>Edit profile</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+
+        </div>
+    </div>
     <@l.logout />
 </nav>

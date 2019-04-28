@@ -39,24 +39,17 @@
 </div>
 
 
-    <#list messages as message>
+    <#list trainers as trainer>
         <div class="card my-3">
 
-       <#if message.filename??>
-           <img src = "/img/${message.filename}">
-       </#if>
-
             <div class="m-2">
-                <span>${message.text}</span>
-                <i>${message.tag}</i>
-            </div>
-            <div class="card-footer text-muted">
-                ${message.authorName}
+                <a href = "/trainer"><span>${trainer.name} ${trainer.lastName}</span></br></a>
+                <i>${trainer.qualification}</i>
             </div>
         </div>
 
     <#else>
-No message
+No trainers
     </#list>
 
 </@c.page>
