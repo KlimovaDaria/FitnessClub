@@ -8,7 +8,6 @@ import java.util.List;
 
 public interface TrainerRepo extends JpaRepository<Trainer, Long> {
         Trainer findByUser(User user);
-
         List<Trainer> findByQualification(String qualification);
         }
 
