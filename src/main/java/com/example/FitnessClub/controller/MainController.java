@@ -28,8 +28,13 @@ public class MainController {
 
     @GetMapping("/main")
     public String main(@RequestParam(required = false, defaultValue = "") String filter, Model model) {
-        Iterable<Trainer> trainers  = trainerRepo.findAll();
+        Iterable<Trainer> trainers;
 
+        if (filter != null && !filter.isEmpty()) {
+            trainers = trainerRepo.findByQualification(filter);
+        } else {
+            trainers = trainerRepo.findAll();
+        }
         model.addAttribute("trainers", trainers);
         model.addAttribute("filter", filter);
 
